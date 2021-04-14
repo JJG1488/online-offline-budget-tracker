@@ -10,6 +10,7 @@ const mongoose = require("mongoose");
 // This middleware will never compress responses that include a Cache-Control header with the no-transform directive, as compressing will transform the body.
 const compression = require("compression");
 
+// sets the port that the server will listen on
 const PORT = process.env.PORT || 3000;
 
 // this sets the value of express to the variable "app"
