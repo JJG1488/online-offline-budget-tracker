@@ -40,10 +40,24 @@ app.use(express.static("public"));
 // connects to the database via our localhost
 //useNewUrlParser - The underlying MongoDB driver has deprecated their current connection string parser. Because this is a major change, they added the useNewUrlParser flag to allow users to fall back to the old parser if they find a bug in the new parser. You should set useNewUrlParser: true unless that prevents you from connecting. Note that if you specify useNewUrlParser: true, you must specify a port in your connection string, like mongodb://localhost:27017/dbname. The new url parser does not support connection strings that do not have a port, like mongodb://localhost/dbname.
 //useFindAndModify - True by default. Set to false to make findOneAndUpdate() and findOneAndRemove() use native findOneAndUpdate() rather than findAndModify().
-mongoose.connect("mongodb://localhost/budget", {
+// mongoose.connect("mongodb://localhost/budget", {
+//   useNewUrlParser: true,
+//   useFindAndModify: false
+// });
+
+// 'mongodb+srv://jg14:XVj7NOQNhoAgZPFH@cluster0.muarw.mongodb.net/test'  #### DELETE THIS BEFORE COMMITING
+
+mongoose.connect(
+
+  process.env.MONGODB_URI || "mongodb://localhost/budget",
+{
   useNewUrlParser: true,
+  useUnifiedTopology: true, 
+  useCreateIndex: true,
   useFindAndModify: false
-});
+}
+
+);
 
 // routes
 // ./routes/api.js is the path that matches...

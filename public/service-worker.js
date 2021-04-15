@@ -1,4 +1,7 @@
 
+
+// '/favicon.ico',  // commented out - because of uncertainty... // this goes under index.html if going to use 
+
 const FILES_TO_CACHE = [
     '/',
     '/index.html',
