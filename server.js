@@ -45,7 +45,15 @@ app.use(express.static("public"));
 //   useFindAndModify: false
 // });
 
-// 'mongodb+srv://jg14:XVj7NOQNhoAgZPFH@cluster0.muarw.mongodb.net/test'  #### DELETE THIS BEFORE COMMITING
+// const MongoClient = require('mongodb').MongoClient;
+
+// const uri = process.env.MONGODB_URI || 'mongodb://localhost/budget';
+// const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+// client.connect(err => {
+//   const collection = client.db("test").collection("devices");
+//   // perform actions on the collection object
+//   client.close();
+// });
 
 mongoose.connect(
 
